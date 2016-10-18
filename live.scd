@@ -7,7 +7,7 @@ b=(offset:0,grandeur:50,nbPoints:5,root:0)
 .parent_((
 	points:[],
 	specs:(offset:\unipolar,
-		grandeur:[1,50,nil,1],
+		grandeur:[1,110,nil,1],
 		nbPoints:[1,30,nil,1]),
 	calcP:{arg s,x,i;
 		(x.sin*s.grandeur)@(x.cos*s.grandeur);
@@ -21,7 +21,7 @@ a.addFlowLayout;
 
 a.drawFunc_{ arg self;
 	var center=self.bounds.extent.asRect.center;
-	Pen.translate(*center.asArray);
+	Pen.translate(*(center.asArray+[0,50]));
 	b.parent.points=nil;
 	(0, (2pi/b.nbPoints) .. 2pi).do { |x,i|
 		var p;
