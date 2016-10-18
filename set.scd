@@ -1,9 +1,8 @@
 (
 var chemin;
 
+var a, f; 
 a=Poly.live;
-
-a.params.points;
 
 f={chemin=(..a.params.nbPoints).scramble};
 f.value;
@@ -14,11 +13,8 @@ a.win.drawFunc=a.win.drawFunc.addFunc({
 	Pen.moveTo(a.params.points[chemin[0]]);
 	chemin.drop(1).do { |x|
 		Pen.lineTo(a.params.points[x]);
-		
-		//		Pen.moveTo(x);
 	};
 	Pen.stroke;
-
 });
 
 a.dict.addAction(\nbPoints,{
@@ -26,5 +22,6 @@ a.dict.addAction(\nbPoints,{
 });
 Button(a.win).action_{chemin=chemin.scramble};
 
-)
+(win:a.win, path:{a.params.points.copy.atAll(chemin)})
 
+)
