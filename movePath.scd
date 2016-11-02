@@ -1,7 +1,7 @@
-a=Poly.set; 
+
 
 (
-
+var a=Poly.set; 
 var pos=(x:0,y:0);
 var envY, envX;
 var recFunc={arg a,b;
